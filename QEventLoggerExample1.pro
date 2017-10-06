@@ -1,7 +1,10 @@
-QT       += core gui
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+# C++14
 CONFIG += c++14
 
+# Qt5
+QT += core gui widgets
+
+# main
 SOURCES += main.cpp
 
 # Dialog
