@@ -1,20 +1,15 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2017-10-06T14:33:01
-#
-#-------------------------------------------------
-
 QT       += core gui
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = QEventLoggerExample1
-TEMPLATE = app
 
+SOURCES += main.cpp
 
-SOURCES += main.cpp\
-        dialog.cpp
+# Dialog
+SOURCES += dialog.cpp
+HEADERS += dialog.h
+FORMS   += dialog.ui
 
-HEADERS  += dialog.h
-
-FORMS    += dialog.ui
+# QEventLogger
+INCLUDEPATH += ../QEventLogger
+SOURCES += ../QEventLogger/QEventLogger.cpp
+HEADERS += ../QEventLogger/QEventLogger.h
