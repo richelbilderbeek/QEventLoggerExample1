@@ -1,5 +1,6 @@
 # C++14
 CONFIG += c++14
+QMAKE_CXXFLAGS += -std=c++14
 
 # Qt5
 QT += core gui widgets
@@ -16,3 +17,8 @@ FORMS   += dialog.ui
 INCLUDEPATH += ../QEventLogger
 SOURCES += ../QEventLogger/QEventLogger.cpp
 HEADERS += ../QEventLogger/QEventLogger.h
+
+# Prevent Qt for failing with this error:
+# qrc_[*].cpp:400:44: error: ‘qInitResources_[*]__init_variable__’ defined but not used
+# [*]: the resource filename
+QMAKE_CXXFLAGS += -Wno-unused-variable
