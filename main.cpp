@@ -1,6 +1,6 @@
 #include "dialog.h"
 #include <QApplication>
-
+#include <QTimer>
 #include "QEventLogger.h"
 
 class MyApplication : public QApplication
@@ -27,5 +27,6 @@ class MyApplication : public QApplication
 int main(int argc, char *argv[])
 {
   MyApplication a(argc, argv);
+  QTimer::singleShot(1000, Qt::CoarseTimer, &a, &QApplication::quit);
   return a.exec();
 }
