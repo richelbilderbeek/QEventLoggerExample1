@@ -27,6 +27,6 @@ class MyApplication : public QApplication
 int main(int argc, char *argv[])
 {
   MyApplication a(argc, argv);
-  QTimer::singleShot(1000, Qt::CoarseTimer, &a, &QApplication::quit);
+  QTimer::singleShot(1000, Qt::CoarseTimer, &a, SLOT(quit()));
   return a.exec();
 }
