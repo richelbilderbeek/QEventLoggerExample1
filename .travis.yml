@@ -30,3 +30,4 @@ script:
   - qmake -qt=qt5
   - make
   - ./QEventLoggerExample1
+  - cat *.csv

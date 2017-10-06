@@ -8,18 +8,20 @@ class MyApplication : public QApplication
   public:
   MyApplication(int &argc, char **argv)
     : QApplication(argc, argv),
-      w(new Dialog)
+      m_dialog{new Dialog},
+      m_event_logger{nullptr}
   {
-    this->eventLogger = new QEventLogger("./events", w, true);
-    this->installEventFilter(this->eventLogger);
-    w->show();
+    const bool enable_screenshots = false;
+    m_event_logger = new QEventLogger("./events", m_dialog, enable_screenshots);
+    installEventFilter(m_event_logger);
+    m_dialog->show();
   }
   ~MyApplication()
   {
-    delete w;
+    delete m_dialog;
   }
-  QEventLogger * eventLogger;
-  Dialog * w;
+  Dialog * const m_dialog;
+  QEventLogger * m_event_logger;
 };
 
 int main(int argc, char *argv[])
