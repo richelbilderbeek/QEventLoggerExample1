@@ -28,5 +28,7 @@ before_script:
 script: 
   - qmake -qt=qt5
   - make
+  - echo "Starting the program"
   - ./QEventLoggerExample1
+  - echo "Showing the log"
   - cat *.csv
